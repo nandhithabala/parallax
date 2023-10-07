@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    header {
+      background: #fff9f9;
+      color: rgb(34, 33, 33);
+      text-align: center;
+      padding: 1em 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #222;
+      padding: 0.5em 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: rgb(255, 243, 243);
+      text-decoration: none;
+      padding: 0.5em 1em;
+      margin: 0 10px;
+      border-radius: 5px;
+      transition: background 0.3s ease-in-out;
+    }
+
+    nav a:hover {
+      background: #f0e4e4;
+    }
+
+    .section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgb(255, 249, 249);
+      font-size: 2em;
+      position: relative;
+    }
+
+    .overlay {
+      background: rgba(117, 115, 115, 0.5);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    #section1 { background: url('https://colorlib.com/wp/wp-content/uploads/sites/2/supernatural-food-website-1024x829.jpg.webp') center/cover fixed; }
+    #section2 { background: url('https://images.squarespace-cdn.com/content/v1/599c75ede9bfdfe898f03f2a/ca9338c8-913d-409a-90ff-c674f7610d58/Copy+of+Spring+Sprinkle+Set+%281000+%C3%97+1350+px%29.gif?format=1500w') center/cover fixed; }
+    #section3 { background: url('https://images.squarespace-cdn.com/content/v1/599c75ede9bfdfe898f03f2a/26adf792-0f35-4f3f-a36c-cfeeaa845256/rainbow+pop+.png?format=1500w') center/cover fixed; }
+    #section4 { background: url('https://images.squarespace-cdn.com/content/v1/599c75ede9bfdfe898f03f2a/b22172bc-0672-457e-8eba-325e93f5d2be/Untitled+design+%284%29.png?format=1500w') center/cover fixed; }
+
+    /* Add more sections as needed */
+
+    .content {
+      text-align: center;
+      z-index: 1;
+    }
+  </style>
+  <title>Parallax Website</title>
+</head>
+<br>
+<body>
+  <header>
+    <br>
+    <h1>Parallax Website</h1>
+  </header>
+<br>
+  <nav>
+    <a href="#section1">Section 1</a>
+    <a href="#section2">Section 2</a>
+    <a href="#section3">Section 3</a>
+    <a href="#section4">Section 4</a>
+  </nav>
+<br>
+  <div class="section" id="section1">
+    <div class="overlay"></div>
+    <div class="content">
+      <p>Supernatural</p>
+      <p>Supernatural has a minimalist yet vibrant, responsive web design with a larger hero image with a parallax effect.
+
+        What’s particularly interesting is that there’s no text or call-to-action (CTA), just a mouthwatering image. The header is 100% transparent, so it doesn’t cause distractions.
+        
+        There’s another parallax section to spice things up before the Instagram feed.</p>
+    </div>
+  </div>
+
+  <div class="section" id="section2">
+    <div class="overlay"></div>
+    <div class="content">
+      <p>MINNA</p>
+      <p>It’s Springle Season
+        Welcome the warmer months with new bundles of our springiest sprinkles, sunny day cupcake kits, and more.</p>
+    </div>
+  </div>
+
+  <div class="section" id="section3">
+    <div class="overlay"></div>
+    <div class="content">
+      <p></p>
+      <p>Big bags for big fans.
+        Save up to 35% with extra large bags of our bestselling dye-free sprinkles, perfect for bakeries, scoop shops, and extremely lucky children.
+        
+        Shop big bags.</p>
+    </div>
+  </div>
+
+  <div class="section" id="section4">
+    <div class="overlay"></div>
+    <div class="content">
+      <p></p>
+      <p>Let’s party with plants.
+        Artificially dyed cakes made us cringe, but plain white swirls left us sulking. So we followed the rainbow to a fresh recipe for vibrant frostings — made from ingredients that made us proud, and bursting with the incredible taste of real buttercream.</p>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
